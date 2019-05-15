@@ -16,7 +16,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.somemessage = "Some weather";
     $scope.zip1City = "";
     $scope.zip1Weather = "";
-
+        
     $scope.zip = function(which) {
 
         var data = "";
