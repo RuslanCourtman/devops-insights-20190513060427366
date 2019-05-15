@@ -57,8 +57,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip4City = response.data.city;
                     $scope.zip4Weather = response.data.weather;
                 } 
-                
-                }
+             
             });
         } else {
             if(which === 1) {
