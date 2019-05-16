@@ -61,7 +61,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip1Weather = response.data.weather;
                         
 
-                        var markL1 = {lat: response.data.lat, lng: response.lon};
+                        var markL1 = {lat: response.data.lat, lng: response.data.lon};
                         
                         
                       var marker1 = new google.maps.Marker({position: markL1, map: 'map-name'});
