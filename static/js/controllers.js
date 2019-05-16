@@ -60,21 +60,21 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip1City = response.data.coord;
                     $scope.zip1Weather = response.data.weather;
                 
-                      var marker1 = new google.maps.Marker({position: $scope.zip1City, map: map});
+                      var marker1 = new google.maps.Marker({position: $scope.zip1City, map: 'map-name'});
                 } else if(which === 2) {
                     $scope.zip2City = response.data.coord;
                     $scope.zip2Weather = response.data.weather;
-                      var marker2 = new google.maps.Marker({position:  $scope.zip2City, map: map});
+                      var marker2 = new google.maps.Marker({position:  $scope.zip2City, map: 'map-name'});
 
                 } else if(which === 3) {
                     $scope.zip3City = response.data.coord;
                     $scope.zip3Weather = response.data.weather;
-                      var marker3 = new google.maps.Marker({position:  $scope.zip3City, map: map});
+                      var marker3 = new google.maps.Marker({position:  $scope.zip3City, map: 'map-name'});
 
                 } else if(which === 4) {
                     $scope.zip4City = response.data.coord;
                     $scope.zip4Weather = response.data.weather;
-                      var marker4 = new google.maps.Marker({position:  $scope.zip4City, map: map});
+                      var marker4 = new google.maps.Marker({position:  $scope.zip4City, map: 'map-name'});
 
                 } 
              
