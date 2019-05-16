@@ -2,6 +2,11 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
+    var latlng1 = "";
+    var latlng2 = "";
+    var latlng3 = "";
+    var latlng4 = "";
+        
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
@@ -13,21 +18,6 @@ ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvide
 }]);
 
 
-
-
-
-ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$timeout', '$sce',
-    function($scope, $http, $routeParams, $timeout, $sce) {
-
-    $scope.somemessage = "Some weather";
-    $scope.zip1City = "";
-    $scope.zip1Weather = "";
-    
-    var latlng1 = "";
-    var latlng2 = "";
-    var latlng3 = "";
-    var latlng4 = "";
-        
     function initMap() {    
     var map;
     var latlng = new google.maps.LatLng(40.9006, 174.8860);
@@ -41,9 +31,16 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
         google.maps.event.addDomListener(window, "load", initMap);
 
     }    
+
+
+ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$timeout', '$sce',
+    function($scope, $http, $routeParams, $timeout, $sce) {
+
+    $scope.somemessage = "Some weather";
+    $scope.zip1City = "";
+    $scope.zip1Weather = "";
+    
         
-        
-          
         
     $scope.zip = function(which) {
 
