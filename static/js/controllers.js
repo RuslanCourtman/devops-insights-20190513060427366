@@ -21,6 +21,8 @@ ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvide
     center: latlng,
     zoom: 12
     });
+        google.maps.event.addDomListener(window, "load", init)
+
     }    
 
 
