@@ -61,15 +61,9 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     $scope.zip1Weather = response.data.weather;
                         
                         
-                      var mySubString1 = $scope.zip1City.substring(
-                      $scope.zip1City.lastIndexOf("-"), 
-                      $scope.zip1City.lastIndexOf("}")
-                       );
-                       var mySubString2 = $scope.zip1City.substring(
-                      $scope.zip1City.lastIndexOf(":") + 1, 
-                      $scope.zip1City.lastIndexOf(",")
-                       );
-                        var markL1 = {lat: mySubString1, lng: mySubString2};
+                      var mySubLat = $scope.zip1City.substring( 19,24 );
+                       var mySubLng = $scope.zip1City.substring(7,13);
+                        var markL1 = {lat: mySubLat, lng: mySubLng};
                         
                         
                       var marker1 = new google.maps.Marker({position: markL1, map: 'map-name'});
