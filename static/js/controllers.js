@@ -2,6 +2,7 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
+
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
     $routeProvider.when('/', {
@@ -12,18 +13,7 @@ ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvide
 }]);
 
 
-    function initMap() {    
-    var map;
-    var latlng = new google.maps.LatLng(39.305, -76.617);
-    // The map, centered at Uluru
-    
-    map = new google.maps.Map(document.getElementById('map-name'), {
-    center: latlng,
-    zoom: 12
-    });
-        google.maps.event.addDomListener(window, "load", initMap);
 
-    }    
 
 
 ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$timeout', '$sce',
@@ -32,7 +22,28 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.somemessage = "Some weather";
     $scope.zip1City = "";
     $scope.zip1Weather = "";
-               
+    
+    var latlng1 = "";
+    var latlng2 = "";
+    var latlng3 = "";
+    var latlng4 = "";
+        
+    function initMap() {    
+    var map;
+    var latlng = new google.maps.LatLng(40.9006, 174.8860);
+    // The map, centered at NZ
+         
+    
+    map = new google.maps.Map(document.getElementById('map-name'), {
+    center: latlng,
+    zoom: 4
+    });
+        google.maps.event.addDomListener(window, "load", initMap);
+
+    }    
+        
+        
+          
         
     $scope.zip = function(which) {
 
