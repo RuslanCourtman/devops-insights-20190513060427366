@@ -2,24 +2,6 @@
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
 
-function initMap() {    
-    var map;
-    var latlng = new google.maps.LatLng(39.305, -76.617);
-    // The map, centered at Uluru
-    
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: latlng,
-    zoom: 12
-});
-  
-} // now it IS a function and it is in global
- 
-
-
-
-
-
-
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
     function ($routeProvider, $locationProvider, $sceDelegateProvider, $httpProvider) {
     $routeProvider.when('/', {
@@ -35,6 +17,18 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.somemessage = "Some weather";
     $scope.zip1City = "";
     $scope.zip1Weather = "";
+        
+    function initMap() {    
+    var map;
+    var latlng = new google.maps.LatLng(39.305, -76.617);
+    // The map, centered at Uluru
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: latlng,
+    zoom: 12
+    });
+    }    
+        
         
     $scope.zip = function(which) {
 
