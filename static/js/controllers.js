@@ -59,10 +59,10 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                 if(which === 1) {
                     $scope.zip1City = response.data.coord;
                     $scope.zip1Weather = response.data.weather;
+                        var coord1 =  response.data.coord;
                         
-                        
-                      var mySubLat = response.data.coord.substring( 19,24 );
-                       var mySubLng = response.data.coord.substring(7,13);
+                      var mySubLat = coord1.substring( 19,24 );
+                       var mySubLng = coord1.substring(7,13);
                         var markL1 = {lat: mySubLat, lng: mySubLng};
                         
                         
