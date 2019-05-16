@@ -59,8 +59,20 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                 if(which === 1) {
                     $scope.zip1City = response.data.coord;
                     $scope.zip1Weather = response.data.weather;
-                
-                      var marker1 = new google.maps.Marker({position: $scope.zip1City, map: 'map-name'});
+                        
+                        
+                      var mySubString1 = $scope.zip1City.substring(
+                      $scope.zip1City.lastIndexOf("-"), 
+                      $scope.zip1City.lastIndexOf("}")
+                       );
+                       var mySubString2 = $scope.zip1City.substring(
+                      $scope.zip1City.lastIndexOf(":") + 1, 
+                      $scope.zip1City.lastIndexOf(",")
+                       );
+                        var markL1 = {lat: mySubString1, lng: mySubString2};
+                        
+                        
+                      var marker1 = new google.maps.Marker({position: markL1, map: 'map-name'});
                 } else if(which === 2) {
                     $scope.zip2City = response.data.coord;
                     $scope.zip2Weather = response.data.weather;
