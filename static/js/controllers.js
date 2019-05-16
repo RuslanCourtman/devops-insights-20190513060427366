@@ -1,11 +1,6 @@
 
 
 var ConsoleModule = angular.module('ConsoleModule', ['ngRoute']);
-
-    var latlng1 = "";
-    var latlng2 = "";
-    var latlng3 = "";
-    var latlng4 = "";
         
 
 ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvider', '$httpProvider',
@@ -20,10 +15,12 @@ ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvide
 
     function initMap() {    
     var map;
-    var latlng = new google.maps.LatLng(40.9006, 174.8860);
+    var latlng = new google.maps.LatLng(-41.310811, 174.8860);
     // The map, centered at NZ
          
-    
+     
+        
+        
     map = new google.maps.Map(document.getElementById('map-name'), {
     center: latlng,
     zoom: 4
@@ -40,8 +37,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
     $scope.zip1City = "";
     $scope.zip1Weather = "";
     
-        
-        
+
     $scope.zip = function(which) {
 
         var data = "";
@@ -63,15 +59,23 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                 if(which === 1) {
                     $scope.zip1City = response.data.coord;
                     $scope.zip1Weather = response.data.weather;
+                
+                      var marker1 = new google.maps.Marker({position: $scope.zip1City, map: map});
                 } else if(which === 2) {
                     $scope.zip2City = response.data.coord;
                     $scope.zip2Weather = response.data.weather;
+                      var marker2 = new google.maps.Marker({position:  $scope.zip2City, map: map});
+
                 } else if(which === 3) {
                     $scope.zip3City = response.data.coord;
                     $scope.zip3Weather = response.data.weather;
+                      var marker3 = new google.maps.Marker({position:  $scope.zip3City, map: map});
+
                 } else if(which === 4) {
                     $scope.zip4City = response.data.coord;
                     $scope.zip4Weather = response.data.weather;
+                      var marker4 = new google.maps.Marker({position:  $scope.zip4City, map: map});
+
                 } 
              
             });
