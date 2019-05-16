@@ -17,7 +17,7 @@ ConsoleModule.config(['$routeProvider', '$locationProvider','$sceDelegateProvide
     var latlng = new google.maps.LatLng(39.305, -76.617);
     // The map, centered at Uluru
     
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map-name'), {
     center: latlng,
     zoom: 12
     });
